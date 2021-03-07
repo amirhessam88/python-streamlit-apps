@@ -8,7 +8,8 @@ install:
 
 jobs:
   include:
-    - script: python -m black apps/diabetes-risk-predictor --line-length=88
+    
+    - script: python -m black apps --line-length=88
       name: pep8
 
     - script: flake8
