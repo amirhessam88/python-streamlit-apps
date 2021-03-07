@@ -1,0 +1,17 @@
+os:
+- linux
+language: python
+python:
+- 3.6
+install:
+- pip install -r requirements-dev.txt
+- pip install -r requirements.txt
+
+jobs:
+  include:
+    
+    - script: python -m black apps --line-length=88
+      name: pep8
+
+    - script: flake8
+      name: flake8
