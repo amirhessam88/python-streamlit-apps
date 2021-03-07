@@ -7,7 +7,6 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 import matplotlib.pyplot as plt
-import xgboost as xgb
 from PIL import Image
 import seaborn as sns
 from sklearn.model_selection import train_test_split
@@ -169,7 +168,6 @@ def plot_hist(df):
 st.write("Histogram Plots")
 plot_hist(df)
 
-
 # nfolds cv
 nfolds = st.sidebar.slider("N-Folds Cross-Validation (Train)", 0, 10, 4)
 
@@ -178,6 +176,7 @@ test_size = st.sidebar.slider("Validation Data Size (Test)", 0.0, 1.0, 0.2)
 
 # training metrics
 metric = st.sidebar.selectbox("Metric", ("AUC", "AUCPR", "LOGLOSS", "ERROR"))
+
 
 # getting feature input from user
 def get_user_input():
@@ -241,14 +240,15 @@ def get_user_input():
     return pd.DataFrame(user_input, index=[0])
 
 
+# get user's inputs
 df_user_input = get_user_input()
-
 
 # model training
 st.markdown(
     "<h2 style='text-align: left; color: black;'>Model Development</h2>",
     unsafe_allow_html=True,
 )
+
 
 # train/test splits
 def get_train_test_splits(df, test_size):
@@ -264,6 +264,7 @@ def get_train_test_splits(df, test_size):
     return X_train, X_test, y_train, y_test
 
 
+# get train/test splits
 X_train, X_test, y_train, y_test = get_train_test_splits(df, test_size)
 
 st.write("Training Data Shape: ", X_train.shape)
@@ -273,16 +274,13 @@ st.write("Testing Prevalence: ", np.round(y_test.sum() / len(y_test) * 100, 2), 
 
 
 # bayesian optimization for best params
-
 st.write("XGBoost Parameters Tuning via Bayesian Optimization")
 xbo = XGBoostClassifierBayesianOpt(n_splits=nfolds)
 xbo.fit(X_train, y_train)
 xbo_results = xbo.get_optimization_results()
 best_params = xbo.get_best_params()
-
 st.write("Bayesian Optimization Results")
 st.dataframe(xbo_results)
-
 st.write("Best Parameters")
 st.json(best_params)
 
@@ -307,6 +305,7 @@ st.markdown(
     "<h2 style='text-align: left; color: black;'>Model Validation</h2>",
     unsafe_allow_html=True,
 )
+
 # plot SHAP summary plot
 st.write("SHAP Summary Plot on Test Data")
 clf.plot_shap_summary(plot_type="violin")
@@ -327,7 +326,6 @@ st.dataframe(clf_metrics.metrics_df)
 # metrics plots
 clf_metrics.plot()
 st.pyplot()
-
 
 st.markdown(
     "<h2 style='text-align: left; color: black;'>User's Diabetes Risk Prediction</h2>",
