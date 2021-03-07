@@ -11,10 +11,10 @@ jobs:
     - stage: tests
 
       script:
-      - pytest --cov=apps --cov-config=.coveragerc
+      - pytest --cov=apps/diabetes-risk-predictor/app.py --cov-config=.coveragerc
       name: pytestq
 
-    - script: python -m black apps --line-length=88
+    - script: python -m black apps/diabetes-risk-predictor/app.py --line-length=88
       name: pep8
 
     - script: flake8
