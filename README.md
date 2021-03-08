@@ -21,7 +21,11 @@
   <img src="https://raw.githubusercontent.com/amirhessam88/python-streamlit-apps/master/assets/demo/demo-diabetes-risk-predictor.gif" width="750"></img>
 </p>
 
-## Note: Apps are still in deployment queue at https://share.streamlit.io !!!
+## Note:
+- 🤔 Apps are still in deployment queue at https://share.streamlit.io !!!
+- 🔭 Presented apps are only a few examples of how to put together an end-to-end web-app using machine learning, python, and streamlit. You can always add your ideas to improve the current app.
+- 👯 Pull requests and new collaboration ideas are welcome.
+
 
 ## Support me by Buying Me a Coffee
 
