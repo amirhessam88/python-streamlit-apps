@@ -336,5 +336,40 @@ st.markdown(
 st.write("User's Inputs")
 st.dataframe(df_user_input)
 
-user_proba = clf.predict(df_user_input)
-st.write("User's Diabetes Risk Prediction: ", np.round(user_proba * 100, 2), "%")
+user_proba = clf.predict_proba(df_user_input)
+user_risk = np.round(user_proba[0] * 100, 2)
+st.write("User's Diabetes Risk Prediction: ", user_risk, "%")
+
+
+# create class based on risk prediction for different thresholds
+def prediction_class(clf_metrics, user_risk):
+    """
+    Function to define prediction class based on threshold
+    """
+    # getting thresholds dict
+    thresholds_dict = clf_metrics.thresholds_dict
+    methods = []
+    thresholds = []
+    classes = []
+    for method, threshold in thresholds_dict.items():
+        methods.append(method)
+        thresh = np.round(threshold * 100, 2)
+        thresholds.append(thresh)
+        if user_risk >= thresh:
+            classes.append("Diabetic")
+        else:
+            classes.append("Non-Diabetic")
+
+    data = {
+        "Threshold Method": methods,
+        "Threshold (%)": thresholds,
+        "Prediction Class": classes,
+    }
+
+    return pd.DataFrame(data)
+
+
+# user input class prediction
+df_user_class = prediction_class(clf_metrics, user_risk)
+st.write("Prediction Class Based on Multiple Thresholds")
+st.dataframe(df_user_class)
