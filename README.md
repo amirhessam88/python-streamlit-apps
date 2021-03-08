@@ -21,6 +21,8 @@
   <img src="https://raw.githubusercontent.com/amirhessam88/python-streamlit-apps/master/assets/demo/demo-diabetes-risk-predictor.gif" width="750"></img>
 </p>
 
+## Note: Apps are still in deployment queue at https://share.streamlit.io !!!
+
 ## Support me by Buying Me a Coffee
 
 <a href="https://www.buymeacoffee.com/amirhessam"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=amirhessam&button_colour=5F7FFF&font_colour=ffffff&font_family=Cookie&outline_colour=000000&coffee_colour=FFDD00"></a>
