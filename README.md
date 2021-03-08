@@ -17,8 +17,9 @@
 
 # Apps
 - **Diabetes Risk Predictor:** [Source](apps/diabetes-risk-predictor/), [Launch App](apps/diabetes-risk-predictor/)
-
-
+<p align="center">
+  <img src="https://raw.githubusercontent.com/amirhessam88/python-streamlit-apps/master/assets/demo/demo-diabetes-risk-predictor.gif" width="500"></img>
+</p>
 
 ## Support me by Buying Me a Coffee
 
