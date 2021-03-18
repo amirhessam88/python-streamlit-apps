@@ -14,6 +14,7 @@ from slickml.classification import XGBoostCVClassifier
 from slickml.optimization import XGBoostClassifierBayesianOpt
 from slickml.metrics import BinaryClassificationMetrics
 import urllib.request
+import numpy.core.multiarray
 
 # handling warnings
 st.set_option("deprecation.showPyplotGlobalUse", False)
