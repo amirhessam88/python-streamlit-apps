@@ -13,6 +13,7 @@ from sklearn.model_selection import train_test_split
 from slickml.classification import XGBoostCVClassifier
 from slickml.optimization import XGBoostClassifierBayesianOpt
 from slickml.metrics import BinaryClassificationMetrics
+import urllib.request
 
 # handling warnings
 st.set_option("deprecation.showPyplotGlobalUse", False)
@@ -24,7 +25,8 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-img_header = Image.open("./assets/design/header.jpg")
+IMAGE_URL = "https://raw.githubusercontent.com/amirhessam88/python-streamlit-apps/master/apps/diabetes-risk-predictor/assets/design/header.jpg"
+img_header = Image.open(urllib.request.urlopen(IMAGE_URL))
 st.image(img_header, use_column_width=True)
 
 # subheader
@@ -39,7 +41,8 @@ def get_data():
     """
     Returns data as pandas DataFrame()
     """
-    df = pd.read_csv("./assets/data/data.csv")
+    DATA_URL = "https://raw.githubusercontent.com/amirhessam88/python-streamlit-apps/master/apps/diabetes-risk-predictor/assets/data/data.csv"
+    df = pd.read_csv(DATA_URL)
 
     return df
 
