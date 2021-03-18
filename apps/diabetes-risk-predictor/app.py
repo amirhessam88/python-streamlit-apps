@@ -43,7 +43,6 @@ def get_data():
     """
     DATA_URL = "https://raw.githubusercontent.com/amirhessam88/python-streamlit-apps/master/apps/diabetes-risk-predictor/assets/data/data.csv"
     df = pd.read_csv(DATA_URL)
-	
 
     return df
 
