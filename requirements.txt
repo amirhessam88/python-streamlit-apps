@@ -10,4 +10,4 @@ bayesian-optimization==1.2.0
 hyperopt==0.2.3
 streamlit==0.78.0
 Pillow==7.0.0
-slickml==0.0.9
+slickml==0.1.0

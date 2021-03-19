@@ -35,6 +35,11 @@ st.subheader(
     """DISCLAIMER: The training dataset is originally from the National Institute of Diabetes and Digestive and Kidney Diseases. The objective of the dataset is to diagnostically predict whether or not a patient has diabetes, based on certain diagnostic measurements included in the dataset. However, several constraints were placed on the selection of these instances from a larger database. In particular, all patients here are females at least 21 years old of Pima Indian heritage."""
 )
 
+# subheader
+st.subheader(
+    """NOTE: Users can see their Diabetes Risk Prediction by putting their inputs on the left panel. The features and their measurement units are explained in the data description section."""
+)
+
 
 # load data + cache
 @st.cache
