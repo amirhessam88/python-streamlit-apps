@@ -14,7 +14,8 @@ from slickml.classification import XGBoostCVClassifier
 from slickml.optimization import XGBoostClassifierBayesianOpt
 from slickml.metrics import BinaryClassificationMetrics
 import urllib.request
-import numpy.core.multiarray
+import shap
+
 
 # handling warnings
 st.set_option("deprecation.showPyplotGlobalUse", False)
@@ -316,8 +317,8 @@ st.markdown(
 )
 
 # plot SHAP summary plot
-st.write("SHAP Summary Plot on Test Data")
-clf.plot_shap_summary(plot_type="violin")
+st.write("SHAP Layered Violin Summary Plot on Test Data")
+clf.plot_shap_summary(plot_type="layered_violin", layered_violin_max_num_bins=5)
 st.pyplot()
 
 # plot SHAP waterfall plot
@@ -348,7 +349,6 @@ st.dataframe(df_user_input)
 user_proba = clf.predict_proba(df_user_input)
 user_risk = np.round(user_proba[0] * 100, 2)
 st.write("User's Diabetes Risk Prediction: ", user_risk, "%")
-
 
 # create class based on risk prediction for different thresholds
 def prediction_class(clf_metrics, user_risk):
