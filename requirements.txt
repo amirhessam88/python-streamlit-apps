@@ -11,3 +11,4 @@ hyperopt==0.2.3
 streamlit==0.78.0
 Pillow==7.0.0
 slickml==0.1.1
+glmnet==2.2.1
