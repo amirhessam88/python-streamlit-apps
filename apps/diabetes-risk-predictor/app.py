@@ -14,7 +14,6 @@ from slickml.classification import XGBoostCVClassifier
 from slickml.optimization import XGBoostClassifierBayesianOpt
 from slickml.metrics import BinaryClassificationMetrics
 import urllib.request
-import shap
 
 
 # handling warnings
@@ -349,6 +348,7 @@ st.dataframe(df_user_input)
 user_proba = clf.predict_proba(df_user_input)
 user_risk = np.round(user_proba[0] * 100, 2)
 st.write("User's Diabetes Risk Prediction: ", user_risk, "%")
+
 
 # create class based on risk prediction for different thresholds
 def prediction_class(clf_metrics, user_risk):
