@@ -10,6 +10,7 @@ import time, datetime
 import altair as alt
 import plotly.figure_factory as ff
 import graphviz as graphviz
+import urllib.request
 
 st.markdown("<h1 style='text-align: center; color: black;'>LIVE DEMO</h1>",
             unsafe_allow_html=True)
@@ -50,12 +51,12 @@ st.json({'foo':'bar','fu':'ba'})
 # # -------------------------------------------
 # image
 st.image('./assets/myimage.png')
-
+# # -------------------------------------------
 # audio
 audio_file = open('./assets/myaudio.ogg', 'rb')
 audio_bytes = audio_file.read()
 st.audio(audio_bytes, format='audio/ogg')
-
+# # -------------------------------------------
 # video
 video_file = open('./assets/myvideo.mp4', 'rb')
 video_bytes = video_file.read()
