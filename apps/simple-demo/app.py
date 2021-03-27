@@ -50,15 +50,18 @@ st.json({'foo':'bar','fu':'ba'})
 # # DISPLAY MEDIA
 # # -------------------------------------------
 # image
-st.image('./assets/myimage.png')
+# st.image('./assets/myimage.png')
+st.image('apps/simple-demo/assets/myimage.png')
 # # -------------------------------------------
 # audio
-audio_file = open('./assets/myaudio.ogg', 'rb')
+# audio_file = open('./assets/myaudio.ogg', 'rb')
+audio_file = open('apps/simple-demo/assets/myaudio.ogg', 'rb')
 audio_bytes = audio_file.read()
 st.audio(audio_bytes, format='audio/ogg')
 # # -------------------------------------------
 # video
-video_file = open('./assets/myvideo.mp4', 'rb')
+# video_file = open('./assets/myvideo.mp4', 'rb')
+video_file = open('apps/simple-demo/assets/myvideo.mp4', 'rb')
 video_bytes = video_file.read()
 st.video(video_bytes)
 # # -------------------------------------------
