@@ -19,3 +19,4 @@ keras==2.4.3
 tensorflow==2.4.1
 streamlit-drawable-canvas==0.4.0
 opencv-python==4.2.0.32
+pyLC3
