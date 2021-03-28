@@ -64,7 +64,7 @@ def plot_model(model_type):
     st.image(PERF_PATH, use_column_width=True)
 
 
-st.success(f"{model_type} is now loaded!")
+st.success(f"The {model_type} model is now loaded!")
 plot_model(model_type)
 
 st.header("Draw Your Digit")
@@ -92,11 +92,11 @@ if st.button("Predict"):
     if model_type == "DNN":
         X_test = img.convert(mode="L")
         y_pred_proba = model.predict(np.asarray(X_test).reshape(1, 28, 28))
-        st.write(f"result: {np.argmax(y_pred_proba[0])}")
-        st.bar_chart(pd.DataFrame({"Prediction": y_pred_proba[0]}))
+        st.write(f"Predicted Digit: {np.argmax(y_pred_proba[0])}")
+        st.bar_chart(pd.DataFrame({"Prediction Probability": y_pred_proba[0]}))
 
     else:
         X_test = img.convert(mode="L")
         y_pred_proba = model.predict(np.asarray(X_test).reshape(1, 28, 28, 1))
-        st.write(f"result: {np.argmax(y_pred_proba[0])}")
-        st.bar_chart(pd.DataFrame({"Prediction": y_pred_proba[0]}))
+        st.write(f"Predicted Digit: {np.argmax(y_pred_proba[0])}")
+        st.bar_chart(pd.DataFrame({"Prediction Probability": y_pred_proba[0]}))
