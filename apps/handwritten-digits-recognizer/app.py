@@ -8,8 +8,10 @@ import pandas as pd
 import streamlit as st
 from streamlit_drawable_canvas import st_canvas
 import matplotlib.pyplot as plt
-import cv2
+# import cv2
 from tensorflow.keras.models import load_model
+
+from PIL import Image
 
 # handling warnings
 st.set_option("deprecation.showPyplotGlobalUse", False)
@@ -81,21 +83,26 @@ canvas_result = st_canvas(
 )
 
 if canvas_result.image_data is not None:
-    img = cv2.resize(canvas_result.image_data.astype("uint8"), (28, 28))
-    rescaled = cv2.resize(img, (SIZE, SIZE), interpolation=cv2.INTER_NEAREST)
+#     img = cv2.resize(canvas_result.image_data.astype("uint8"), (28, 28))
+#     rescaled = cv2.resize(img, (SIZE, SIZE), interpolation=cv2.INTER_NEAREST)
+    img = Image.fromarray(canvas_result.image_data.astype("uint8"))
+    img = img.resize((28, 28))
+    rescaled = img.resize((SIZE, SIZE), resample=Image.NEAREST)
     st.write("Model Input")
     st.image(rescaled)
 
 if st.button("Predict"):
 
     if model_type == "DNN":
-        X_test = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-        val = model.predict(X_test.reshape(1, 28, 28))
-        st.write(f"result: {np.argmax(val[0])}")
-        st.bar_chart(pd.DataFrame({"Prediction": val[0]}))
+#         X_test = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+        X_test = img.convert(mode="L")
+        y_pred_proba = model.predict(np.asarray(X_test).reshape(1, 28, 28))
+        st.write(f"result: {np.argmax(y_pred_proba[0])}")
+        st.bar_chart(pd.DataFrame({"Prediction": y_pred_proba[0]}))
 
     else:
-        X_test = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-        val = model.predict(X_test.reshape(1, 28, 28, 1))
-        st.write(f"result: {np.argmax(val[0])}")
-        st.bar_chart(pd.DataFrame({"Prediction": val[0]}))
+#         X_test = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+        X_test = img.convert(mode="L")
+        y_pred_proba = model.predict(np.asarray(X_test).reshape(1, 28, 28, 1))
+        st.write(f"result: {np.argmax(y_pred_proba[0])}")
+        st.bar_chart(pd.DataFrame({"Prediction": y_pred_proba[0]}))
