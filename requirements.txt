@@ -1,4 +1,8 @@
+keras==2.4.3
+tensorflow==2.4.1
+streamlit-drawable-canvas==0.6.0
 pandas==1.1.1
+numpy==1.20.1
 scikit-learn==0.24.1
 scipy==1.5.2
 seaborn==0.11.1
@@ -14,7 +18,3 @@ slickml==0.1.1
 glmnet==2.2.1
 plotly==4.9.0
 graphviz==0.14
-keras==2.4.3
-tensorflow==2.4.1
-streamlit-drawable-canvas==0.6.0
-numpy==1.20.1
