@@ -1,4 +1,4 @@
-numpy=1.19.5
+numpy==1.19.5
 pandas==1.1.1
 scikit-learn==0.24.1
 scipy==1.5.2
@@ -17,5 +17,5 @@ matplotlib==3.3.4
 altair==4.0.1
 keras==2.4.3
 tensorflow==2.4.1
-streamlit-drawable-canvas==0.6.0
+streamlit-drawable-canvas==0.4.0
 opencv-python==4.2.0.32
