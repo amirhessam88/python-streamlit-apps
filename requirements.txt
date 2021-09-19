@@ -11,7 +11,7 @@ bayesian-optimization==1.2.0
 hyperopt==0.2.3
 streamlit==0.79.0
 Pillow==7.0.0
-slickml==0.1.1
+slickml==0.1.5
 glmnet==2.2.1
 plotly==4.9.0
 graphviz==0.14
