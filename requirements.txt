@@ -15,6 +15,8 @@ slickml==0.1.5
 glmnet==2.2.1
 plotly==4.9.0
 graphviz==0.14
-keras==2.4.3
-tensorflow==2.4.1
+#keras==2.4.3
+keras
+#tensorflow==2.4.1
+tensorflow
 streamlit-drawable-canvas==0.6.0
