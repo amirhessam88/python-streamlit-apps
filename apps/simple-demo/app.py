@@ -98,7 +98,7 @@ st.markdown(
 # st.altair_chart(c, use_container_width=True)
 
 
-# # plotly
+# plotly
 
 # # add histogram data
 # x1 = np.random.randn(200) - 2
@@ -137,7 +137,7 @@ st.markdown(
 # """
 # )
 
-# # map
+# map
 # map_data = pd.DataFrame(
 #     np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4], columns=["lat", "lon"]
 # )
@@ -147,11 +147,11 @@ st.markdown(
 # # -------------------------------------------
 
 
-# # WIDGETS BEGIN
+# WIDGETS BEGIN
 
-# # -------------------------------------------
-# # BUTTON
-# # -------------------------------------------
+# -------------------------------------------
+# BUTTON
+# -------------------------------------------
 # if st.button("Hit Me"):
 #     st.write("Respond after Hit")
 # else:
@@ -159,7 +159,7 @@ st.markdown(
 # # -------------------------------------------
 
 
-# # -------------------------------------------
+# -------------------------------------------
 # # CHECKBOX
 # # -------------------------------------------
 # agree = st.sidebar.checkbox("I agree")
@@ -180,15 +180,15 @@ st.markdown(
 # # -------------------------------------------
 
 
-# # -------------------------------------------
-# # SELECTBOX
-# # st.selectbox(label,
-# #              options,
-# #              index=0,
-# #              format_func=<class 'str'>,
-# #              key=None,
-# #              help=None)
-# # -------------------------------------------
+# -------------------------------------------
+# SELECTBOX
+# st.selectbox(label,
+#              options,
+#              index=0,
+#              format_func=<class 'str'>,
+#              key=None,
+#              help=None)
+# -------------------------------------------
 # option = st.sidebar.selectbox(
 #     "How would you like to be contacted?", ("Email", "Home phone", "Mobile phone")
 # )
@@ -198,12 +198,12 @@ st.markdown(
 
 # # -------------------------------------------
 # # MULTISELECT
-# # st.multiselect(label,
-# #                options,
-# #                default=None,
-# #                format_func=<class 'str'>,
-# #                key=None,
-# #                help=None)
+# st.multiselect(label,
+#                options,
+#                default=None,
+#                format_func=<class 'str'>,
+#                key=None,
+#                help=None)
 # # -------------------------------------------
 # options = st.multiselect(
 #     "What are your favorite colors", ["Green", "Yellow", "Red", "Blue"]
@@ -214,14 +214,14 @@ st.markdown(
 
 # # -------------------------------------------
 # # SLIDER
-# # st.slider(label,
-# #           min_value=None,
-# #           max_value=None,
-# #           value=None,
-# #           step=None,
-# #           format=None,
-# #           key=None,
-# #           help=None)
+# st.slider(label,
+#           min_value=None,
+#           max_value=None,
+#           value=None,
+#           step=None,
+#           format=None,
+#           key=None,
+#           help=None)
 # # -----------------------------------------
 # age = st.slider("How old are you?", 0.0, 130.0, 25.0)
 # st.write("I'm ", age, "years old")
@@ -253,23 +253,23 @@ st.markdown(
 # # -------------------------------------------
 
 
-# # -------------------------------------------
-# # TEXT INPUT/DATE/TIME
-# # st.ext_input(label,
-# #              value='',
-# #              max_chars=None,
-# #              key=None,
-# #              type='default',
-# #              help=None)
-# # -----------------------------------------
-# user = st.text_input("Enter your name: ")
-# st.write(f"{user} just logged in!")
+# -------------------------------------------
+# TEXT INPUT/DATE/TIME
+# st.ext_input(label,
+#              value='',
+#              max_chars=None,
+#              key=None,
+#              type='default',
+#              help=None)
+# -----------------------------------------
+user = st.text_input("Enter your name: ")
+st.write(f"{user} just logged in!")
 
-# d = st.date_input("Date of Birth", datetime.date(1988, 4, 13))
-# st.write("Your birthday is:", d)
+d = st.date_input("Date of Birth", datetime.date(1988, 4, 13))
+st.write("Your birthday is:", d)
 
-# t = st.time_input("Set appoitment for", datetime.time(8, 45))
-# st.write("Appoitment is set for", t)
+t = st.time_input("Set appoitment for", datetime.time(8, 45))
+st.write("Appoitment is set for", t)
 # # -------------------------------------------
 
 
@@ -277,26 +277,26 @@ st.markdown(
 # DISPLAY MISC.
 # -------------------------------------------
 
-color = st.color_picker("Pick A Color", "#00f900")
-st.write("The current color is", color)
+# color = st.color_picker("Pick A Color", "#00f900")
+# st.write("The current color is", color)
 
 
-latest_iteration = st.empty()
-bar = st.progress(0)
-for i in range(11):
-    latest_iteration.text(f"Iteration {i}")
-    bar.progress(i * 10)
-    time.sleep(0.2)
+# latest_iteration = st.empty()
+# bar = st.progress(0)
+# for i in range(11):
+#     latest_iteration.text(f"Iteration {i}")
+#     bar.progress(i * 10)
+#     time.sleep(0.2)
 
-st.spinner()
-with st.spinner(text="In progress"):
-    time.sleep(2)
-    st.success("Done")
+# st.spinner()
+# with st.spinner(text="In progress"):
+#     time.sleep(2)
+#     st.success("Done")
 
-st.error("Error message")
-st.warning("Warning message")
-st.info("Info message")
-st.success("Success message")
+# st.error("Error message")
+# st.warning("Warning message")
+# st.info("Info message")
+# st.success("Success message")
 
 st.balloons()
 # -------------------------------------------
