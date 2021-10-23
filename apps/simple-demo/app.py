@@ -50,7 +50,7 @@ st.markdown(
 # # # -------------------------------------------
 # # # DISPLAY MEDIA
 # # # -------------------------------------------
-# # image
+# image
 # # st.image('./assets/myimage.png')
 # st.image("apps/simple-demo/assets/myimage.png")
 # # # -------------------------------------------
@@ -76,7 +76,7 @@ st.markdown(
 #     chart_data = pd.DataFrame(np.random.randn(20, 3), columns=["a", "b", "c"])
 #     chart_data
 
-# default charts
+# # default charts
 # st.line_chart(chart_data)
 # st.area_chart(chart_data)
 # st.bar_chart(chart_data)
@@ -89,7 +89,7 @@ st.markdown(
 # st.pyplot(fig)
 
 
-# # altair
+# altair
 # c = (
 #     alt.Chart(chart_data)
 #     .mark_circle()
@@ -98,9 +98,9 @@ st.markdown(
 # st.altair_chart(c, use_container_width=True)
 
 
-# plotly
+# # plotly
 
-# # add histogram data
+# # # add histogram data
 # x1 = np.random.randn(200) - 2
 # x2 = np.random.randn(200)
 # x3 = np.random.randn(200) + 2
@@ -156,13 +156,13 @@ st.markdown(
 #     st.write("Respond after Hit")
 # else:
 #     st.write("Respond before Hit")
-# # -------------------------------------------
+# -------------------------------------------
 
 
 # -------------------------------------------
 # # CHECKBOX
 # # -------------------------------------------
-# agree = st.sidebar.checkbox("I agree")
+# agree = st.checkbox("I agree")
 # if agree:
 #     st.write("Great!")
 # # -------------------------------------------
@@ -262,14 +262,14 @@ st.markdown(
 #              type='default',
 #              help=None)
 # -----------------------------------------
-user = st.text_input("Enter your name: ")
-st.write(f"{user} just logged in!")
+# user = st.text_input("Enter your name: ")
+# st.write(f"{user} just logged in!")
 
-d = st.date_input("Date of Birth", datetime.date(1988, 4, 13))
-st.write("Your birthday is:", d)
+# d = st.date_input("Date of Birth", datetime.date(1988, 4, 13))
+# st.write("Your birthday is:", d)
 
-t = st.time_input("Set appoitment for", datetime.time(8, 45))
-st.write("Appoitment is set for", t)
+# t = st.time_input("Set appoitment for", datetime.time(8, 45))
+# st.write("Appoitment is set for", t)
 # # -------------------------------------------
 
 
@@ -298,5 +298,5 @@ st.write("Appoitment is set for", t)
 # st.info("Info message")
 # st.success("Success message")
 
-st.balloons()
+# st.balloons()
 # -------------------------------------------

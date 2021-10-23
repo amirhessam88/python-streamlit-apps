@@ -174,8 +174,8 @@ def plot_hist(df):
     st.pyplot()
 
 
-st.write("Histogram Plots")
-plot_hist(df)
+# st.write("Histogram Plots")
+# plot_hist(df)
 
 # nfolds cv
 nfolds = st.sidebar.slider("N-Folds Cross-Validation (Train)", 0, 10, 4)
@@ -330,7 +330,7 @@ st.write("Model Performance on Test Data")
 clf_metrics = BinaryClassificationMetrics(y_test, y_pred_proba)
 
 # metrics dataframe
-st.dataframe(clf_metrics.metrics_df)
+st.dataframe(clf_metrics.metrics_df_)
 
 # metrics plots
 clf_metrics.plot()
@@ -356,7 +356,7 @@ def prediction_class(clf_metrics, user_risk):
     Function to define prediction class based on threshold
     """
     # getting thresholds dict
-    thresholds_dict = clf_metrics.thresholds_dict
+    thresholds_dict = clf_metrics.thresholds_dict_
     methods = []
     thresholds = []
     classes = []

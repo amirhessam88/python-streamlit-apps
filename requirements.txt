@@ -12,9 +12,9 @@ hyperopt
 streamlit
 Pillow
 glmnet
+slickml
 plotly
 graphviz
 keras
 tensorflow
 streamlit-drawable-canvas
-slickml
