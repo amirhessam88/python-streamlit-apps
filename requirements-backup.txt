@@ -17,4 +17,4 @@ graphviz==0.14
 keras==2.6.0
 tensorflow==2.6.0
 streamlit-drawable-canvas==0.8.0
-numpy
+numpy==1.23.3
